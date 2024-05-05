@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    username: retail_store
+    password: retail_store
+    url: jdbc:mysql://localhost:3306/retail_store
+    
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
