@@ -24,9 +24,16 @@ public class GlobalErrorHandler {
 
 	@ExceptionHandler(UnsupportedOperationException.class)
 	@ResponseStatus(code = HttpStatus.METHOD_NOT_ALLOWED)
-	public Map<String, String> handleUnsupportedOperationException(UnsupportedOperationException ex,
-			WebRequest webRequest) {
+	public Map<String, String> handleUnsupportedOperationException(UnsupportedOperationException ex) {
 		log.error("Esception: {}", ex.toString());
+		return Map.of("message", ex.toString());
+	}
+	
+	
+	@ExceptionHandler(Exception.class)
+	@ResponseStatus(code = HttpStatus.INTERNAL_SERVER_ERROR)
+	public Map<String, String> handleException(Exception ex){
+		log.error("Exception: {}", ex.toString());
 		return Map.of("message", ex.toString());
 	}
 }
