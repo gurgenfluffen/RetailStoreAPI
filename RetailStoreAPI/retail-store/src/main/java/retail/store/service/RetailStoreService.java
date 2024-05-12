@@ -98,17 +98,7 @@ public class RetailStoreService {
 	@Transactional(readOnly = true)
 	public RetailStoreData retrieveRetailStoreById(Long retailStoreId) {
 		return new RetailStoreData(findRetailStoreById(retailStoreId));
-		// add message for when some dumb dumb tries to delete all of them
 	}
-
-	// research parity!
-
-//is it possible to add a scanner for user input to compare the string to?
-	// Also, does eclipse still take scanner input when spring is running?
-	// Would the scanner have to be declared in each entity? Declared in the service
-	// layer?
-	// EDIT: anything regarding the scanner will be implemented after learning about
-	// the front end
 
 	// The following commented out mehtod will be implemented after completing a
 	// front end course
@@ -136,10 +126,6 @@ public class RetailStoreService {
 		copyRetailItemFields(retailItem, retailStoreItem);
 		return new RetailStoreItem(retailItemDao.save(retailItem));
 	}
-
-	// filters security for permissions
-	// look at spring security dependency? for permissions
-	// baeldung spring resources! good stuff!
 
 	private void copyRetailItemFields(Item retailItem, RetailStoreItem retailStoreItem) {
 		retailItem.setItemId(retailStoreItem.getItemId());
@@ -202,7 +188,6 @@ public class RetailStoreService {
 	public void deleteItemByID(Long retailItemId) {
 		Item retailItem = findStoreItemById(retailItemId);
 		retailItemDao.delete(retailItem);
-		// add message for when some dumb dumb tries to delete all of them
 	}
 
 	@Transactional(readOnly = false)
