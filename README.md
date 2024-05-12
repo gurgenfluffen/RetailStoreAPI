@@ -1,1 +1,3 @@
-"# RetailStoreAPI" 
+This is my final project for Promineo Tech's backend course. Unfortunately, it's not as complete as I had hoped it would be, so I apologize for that.
+
+This store API features five entities: store, admin, items, customers, and employees. The goal for this project was to have a way for admins to add stores, employees, customers, and items to the database. The employees were supposed to be able to add and update items. The customers should've been able to view items and stores. For stretch goals, I had wanted to have different security clearance levels that showed different "user portals" for each type of user. Additionally, I had wanted to add user input and images, but only after completing a front end course.
